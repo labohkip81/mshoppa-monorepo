@@ -1,0 +1,31 @@
+[project]
+name = "mshoppa-core"
+version = "0.1.0"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "django>=5.2,<5.3",
+  "djangorestframework>=3.16,<3.17",
+  "celery[redis]>=5.5,<6",
+  "drf-spectacular>=0.28,<0.30",
+  "pyotp>=2.9,<3",
+  "cryptography>=46,<49",
+  "pillow>=12.3,<13",
+  "nh3>=0.3,<0.4",
+  "stripe>=15.6.1,<16",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-django>=4.11,<5", "ruff>=0.12,<1"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]

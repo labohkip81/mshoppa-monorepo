@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "preserve", "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"], "strict": true, "skipLibCheck": true,
+    "experimentalDecorators": true, "isolatedModules": true,
+    "useDefineForClassFields": false, "importHelpers": true,
+    "baseUrl": ".",
+    "paths": {"@mshoppa/ui": ["packages/ui/src/index.ts"], "@mshoppa/api": ["packages/api-client/src/index.ts"]}
+  },
+  "angularCompilerOptions": {"strictTemplates": true, "strictInjectionParameters": true},
+  "include": ["apps/**/*.ts", "packages/**/*.ts"]
+}

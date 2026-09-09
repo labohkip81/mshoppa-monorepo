@@ -1,0 +1,39 @@
+/* Storefront controls share the same field and option-menu treatment. */
+:is(.store-sort,.store-variant-picker,.cart-variant-picker) select {
+  appearance:none;
+  -webkit-appearance:none;
+  min-width:0;
+  border:1px solid #dce0e8;
+  border-radius:9px;
+  padding:10px 36px 10px 12px;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23768093' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 11px center / 16px;
+  color:var(--ink);
+  font-family:var(--font-brand);
+  line-height:1.5;
+  cursor:pointer;
+  transition:border-color 150ms,box-shadow 150ms;
+}
+:is(.store-sort,.store-variant-picker,.cart-variant-picker) select:hover:not(:disabled){border-color:#a9b4c3}
+:is(.store-sort,.store-variant-picker,.cart-variant-picker) select:focus-visible{outline:0;border-color:#718198;box-shadow:0 0 0 3px #71819820}
+:is(.store-sort,.store-variant-picker,.cart-variant-picker) select:disabled{opacity:.5;cursor:not-allowed;background-color:#f3f4f6}
+.store-sort{padding:0 0 0 12px;gap:8px;border-radius:9px}
+.store-sort select{border:0;min-height:40px;padding-left:0;border-radius:0 9px 9px 0;font-size:inherit}
+.store-sort:focus-within{outline:0;border-color:#718198;box-shadow:0 0 0 3px #71819820}
+.store-sort select:focus-visible{box-shadow:none}
+
+@supports (appearance:base-select) {
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) select,
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) select::picker(select){appearance:base-select}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) select{display:inline-flex;align-items:center;justify-content:space-between;gap:10px;background-image:none;padding-right:12px}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) select::picker-icon{content:'';width:7px;height:7px;flex-shrink:0;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;color:var(--muted);transform:rotate(45deg) translateY(-2px);margin-left:auto;transition:transform 150ms}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) select:open::picker-icon{transform:rotate(225deg) translate(-1px,-1px)}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) select::picker(select){font:400 12px/1.5 var(--font-brand);color:var(--ink);background:#fff;border:1px solid #e0e5ec;border-radius:12px;padding:5px;margin-top:7px;box-shadow:0 12px 32px #17202c24,0 3px 8px #17202c08;max-height:min(320px,50dvh);max-width:calc(100vw - 24px);overflow:auto}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) option{display:flex;align-items:center;gap:16px;min-height:40px;margin:1px 0;padding:10px 12px;border-radius:7px;background:#fff;color:var(--ink);cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) option:hover,
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) option:focus{background:#f0f2f6;outline:0}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) option:checked{background:#17202c;color:#fff;font-weight:500}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) option:disabled{opacity:.45;cursor:not-allowed}
+  :is(.store-sort,.store-variant-picker,.cart-variant-picker) option::checkmark{order:2;margin-left:auto;color:inherit}
+}
+@media(max-width:640px){.store-sort{padding-left:10px}.store-sort select{min-height:38px}}
+@media(prefers-reduced-motion:reduce){:is(.store-sort,.store-variant-picker,.cart-variant-picker) select,:is(.store-sort,.store-variant-picker,.cart-variant-picker) select::picker-icon{transition:none}}

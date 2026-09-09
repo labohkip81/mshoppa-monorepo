@@ -1,0 +1,352 @@
+{
+  "version": 1,
+  "cli": {
+    "analytics": false
+  },
+  "projects": {
+    "marketing": {
+      "projectType": "application",
+      "root": "apps/marketing",
+      "sourceRoot": "apps/marketing/src",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/marketing",
+            "index": "apps/marketing/src/index.html",
+            "browser": "apps/marketing/src/main.ts",
+            "tsConfig": "apps/marketing/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "mshoppa-logo-reference.png",
+                "input": "assets/brand",
+                "output": "brand"
+              },
+              {
+                "glob": "OFL.txt",
+                "input": "assets/brand/fonts/poppins",
+                "output": "licenses/poppins"
+              }
+            ],
+            "styles": [
+              "packages/ui/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "750kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json",
+            "host": "127.0.0.1",
+            "allowedHosts": [
+              ".localhost"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "marketing:build:production"
+            },
+            "development": {
+              "buildTarget": "marketing:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "merchant-admin": {
+      "projectType": "application",
+      "root": "apps/merchant-admin",
+      "sourceRoot": "apps/merchant-admin/src",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/merchant-admin",
+            "index": "apps/merchant-admin/src/index.html",
+            "browser": "apps/merchant-admin/src/main.ts",
+            "tsConfig": "apps/merchant-admin/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "mshoppa-logo-reference.png",
+                "input": "assets/brand",
+                "output": "brand"
+              },
+              {
+                "glob": "OFL.txt",
+                "input": "assets/brand/fonts/poppins",
+                "output": "licenses/poppins"
+              }
+            ],
+            "styles": [
+              "packages/ui/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "750kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json",
+            "host": "127.0.0.1",
+            "allowedHosts": [
+              ".localhost"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "merchant-admin:build:production"
+            },
+            "development": {
+              "buildTarget": "merchant-admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "platform-admin": {
+      "projectType": "application",
+      "root": "apps/platform-admin",
+      "sourceRoot": "apps/platform-admin/src",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/platform-admin",
+            "index": "apps/platform-admin/src/index.html",
+            "browser": "apps/platform-admin/src/main.ts",
+            "tsConfig": "apps/platform-admin/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "mshoppa-logo-reference.png",
+                "input": "assets/brand",
+                "output": "brand"
+              },
+              {
+                "glob": "OFL.txt",
+                "input": "assets/brand/fonts/poppins",
+                "output": "licenses/poppins"
+              }
+            ],
+            "styles": [
+              "packages/ui/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "750kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json",
+            "host": "127.0.0.1",
+            "allowedHosts": [
+              ".localhost"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "platform-admin:build:production"
+            },
+            "development": {
+              "buildTarget": "platform-admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "storefront": {
+      "projectType": "application",
+      "root": "apps/storefront",
+      "sourceRoot": "apps/storefront/src",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/storefront",
+            "index": "apps/storefront/src/index.html",
+            "browser": "apps/storefront/src/main.ts",
+            "tsConfig": "apps/storefront/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "mshoppa-logo-reference.png",
+                "input": "assets/brand",
+                "output": "brand"
+              },
+              {
+                "glob": "OFL.txt",
+                "input": "assets/brand/fonts/poppins",
+                "output": "licenses/poppins"
+              }
+            ],
+            "styles": [
+              "packages/ui/src/storefront.css",
+              "packages/ui/src/shop-profile.css",
+              "packages/ui/src/rich-text.css",
+              "packages/ui/src/commerce.css",
+              "packages/ui/src/store-dropdowns.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "750kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json",
+            "host": "127.0.0.1",
+            "allowedHosts": [
+              ".localhost"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "storefront:build:production"
+            },
+            "development": {
+              "buildTarget": "storefront:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "payments": {
+      "projectType": "application",
+      "root": "apps/payments",
+      "sourceRoot": "apps/payments/src",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/payments",
+            "index": "apps/payments/src/index.html",
+            "browser": "apps/payments/src/main.ts",
+            "tsConfig": "apps/payments/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "mshoppa-logo-reference.png",
+                "input": "assets/brand",
+                "output": "brand"
+              },
+              {
+                "glob": "OFL.txt",
+                "input": "assets/brand/fonts/poppins",
+                "output": "licenses/poppins"
+              },
+              {
+                "glob": "*",
+                "input": "assets/brand/payments",
+                "output": "brand/payments"
+              }
+            ],
+            "styles": [
+              "packages/ui/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "750kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "apps/payments/proxy.conf.json",
+            "host": "127.0.0.1",
+            "allowedHosts": [
+              ".localhost"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "payments:build:production"
+            },
+            "development": {
+              "buildTarget": "payments:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    }
+  }
+}
