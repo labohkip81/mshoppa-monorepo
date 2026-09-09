@@ -40,4 +40,6 @@ Useful commands and setup are in the [README](../README.md#useful-commands). Tes
 
 ## Source publication
 
+The [Nginx deployment guide](DEPLOYMENT.md) now includes example Nginx/systemd configuration, wildcard and merchant-domain SSL issuance/renewal, performance targets, and backup/rollback procedures. These are deployment instructions; production application conversion, target-server validation, and measured load testing remain outstanding.
+
 The source and architecture documentation are prepared for `labohkip81/mshoppa-monorepo`. Git excludes local secrets and `.env` files, SQLite databases, uploaded media, mail files, dependency environments, build output, and agent logs. Example environment files, source migrations, tests, and dependency lockfiles are included. Publishing the repository does not deploy the applications.

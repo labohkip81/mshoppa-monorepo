@@ -1,0 +1,27 @@
+# TEMPLATE: application production prerequisites in DEPLOYMENT.md must be completed.
+[Unit]
+Description=MSHOPPA worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=mshoppa
+Group=mshoppa
+WorkingDirectory=/srv/mshoppa/current/services/core
+EnvironmentFile=/etc/mshoppa/core.env
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/srv/mshoppa/current/services/core/.venv/bin/python manage.py process_jobs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=60
+KillSignal=SIGTERM
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/mshoppa/shared
+
+[Install]
+WantedBy=multi-user.target

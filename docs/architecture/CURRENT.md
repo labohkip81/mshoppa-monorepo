@@ -133,6 +133,8 @@ Both services expose `/api/health/`. Core probes its database; payments returns 
 
 Production work remains: database/concurrency decisions, independently deployable services and identities, HTTPS/domain routing, external mail, shared throttling, reconciliation/refunds, backup/restore validation, account recovery/invitations, shipping/tax rules, inventory movements, SSR/cache strategy, and browser/accessibility verification. Publishing GitHub source does not deploy applications or migrate local runtime data.
 
+The [Nginx deployment guide](../DEPLOYMENT.md) provides the target VPS layout, Certbot certificate workflows, configuration templates, performance budgets, and release/recovery instructions. Its prerequisite table distinguishes required production changes from current capabilities; the templates do not enable production behavior by themselves.
+
 ## Verification entry points
 
 ```sh

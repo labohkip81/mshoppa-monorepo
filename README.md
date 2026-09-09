@@ -6,6 +6,8 @@ This is a working **local alpha**, not yet a production commerce platform. Signu
 
 See the [current architecture](docs/architecture/CURRENT.md) for service boundaries, data ownership, request flows, permissions, and operational limits, and [implementation status](docs/IMPLEMENTATION_STATUS.md) for verification results.
 
+For hosting, use the [Nginx deployment guide](docs/DEPLOYMENT.md): VPS setup, Gunicorn/systemd templates, automatic wildcard and merchant-domain SSL with Certbot, static caching, performance targets, backups, and rollback. It identifies the production code changes required before public commerce can run; the current payment service still requires local debug mode.
+
 ## Quick start
 
 Requires Node 24, Python 3.13, and [uv](https://docs.astral.sh/uv/).
